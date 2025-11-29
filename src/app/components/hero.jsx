@@ -1,19 +1,17 @@
+'use client'
+
 import React from 'react'
-import Image from 'next/image'
-import Background from '../../../public/hunter_background.avif'
 
 function hero() {
   return (
-    <div>
-      <div className='m-10 relative h-150 rounded-2xl overflow-hidden shadow-lg'>
-        <Image 
-          src={Background}
-          alt="background"
-          fill
-          className="object-cover"
-        />
-      </div> 
-      
+    <div className='flex justify-center items-center w-full h-70'>
+      <iframe
+        className="w-75 h-50 rounded-2xl"
+        src="https://www.youtube.com/embed/PxYnfesUCs0"
+        title="YouTube video"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      ></iframe>
     </div>
   )
 }

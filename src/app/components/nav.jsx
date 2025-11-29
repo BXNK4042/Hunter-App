@@ -1,23 +1,27 @@
 'use client'
 
 import React from 'react'
-import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '../../../public/Hunter-Logo.png'
+import Menu from '../../../public/Menu.png'
 
 function nav() {
   return (
-    <div className='flex justify-between px-20 py-5 bg-gray-100'>
-      <h1 className='text-2xl font-bold'>Hunter × Hunter</h1>
-      <ul className='flex justify-between w-80'>
-        <li>
-          <Link className='text-xl' href="/home">Home</Link>
-        </li>
-        <li>
-          <Link className='text-xl'  href="/character">Character</Link>
-        </li>
-        <li>
-          <Link className='text-xl'  href="/nen">Nen</Link>
-        </li>
-      </ul>
+    <div className='px-10 py-3 bg-gray-100 flex justify-between items-center'>
+      <div>
+        <Image 
+          src={Logo}
+          width={80}
+          alt='hunter x hunter'
+        />        
+      </div>
+      <div>
+        <Image 
+          src={Menu}
+          width={32}
+          alt='menu'
+        />        
+      </div>        
     </div>
   )
 }
