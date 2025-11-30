@@ -1,8 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, {useState} from 'react'
 import Image from 'next/image'
 import Plus from '../../../public/Plus.png'
 
 function faq() {
+  const [isFaqOpen, setIsFaqOpen] = useState(false)
+
+  const toggleFaq = () => {
+    setIsFaqOpen(!isFaqOpen)
+  }
+
   const questions = [
     {id: 0, q: 'Who created Hunter × Hunter?', a: 'Hunter × Hunter was created by Yoshihiro Togashi, the same manga artist behind Yu Yu Hakusho.'},
     {id: 1, q: 'Is Hunter × Hunter finished?', a: 'The manga is not officially finished. Togashi releases chapters irregularly due to health issues, but the story is not cancelled.'},
@@ -12,19 +20,27 @@ function faq() {
   ]
 
   return (
-    <div className='h-80 bg-gray-100'>
+    <div className='bg-gray-100'>
       <div className="mx-20 py-10">
         <h1 className='text-2xl font-bold'>FAQ</h1>
         <hr className='my-3'/>
         <ul className=''>
           {questions.map((question) => (
-            <li className='w-60 cursor-pointer flex justify-between items-start text-sm my-3' key={question.id}>
-              {question.q}
-              <Image
-                src={Plus}
-                width={20}
-                alt='plus'
-              />
+            <li className='w-60 cursor-pointer text-sm my-3' key={question.id}>
+              <div className="flex justify-between items-start font-bold">
+                {question.q}
+                <Image
+                  src={Plus}
+                  width={20}
+                  alt='plus'
+                  onClick={toggleFaq}
+                />                
+              </div>
+              {isFaqOpen ? (
+                <div className="mt-2 w-60">
+                  {question.a}
+                </div>                
+              ): null}
             </li> 
           ))}
         </ul>        
