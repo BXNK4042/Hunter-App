@@ -1,4 +1,6 @@
 import React from 'react'
+import Image from 'next/image'
+import Plus from '../../../public/Plus.png'
 
 function faq() {
   const questions = [
@@ -10,15 +12,20 @@ function faq() {
   ]
 
   return (
-    <div className='h-70 bg-gray-100'>
-      <div className="mx-15 py-10">
+    <div className='h-80 bg-gray-100'>
+      <div className="mx-20 py-10">
         <h1 className='text-2xl font-bold'>FAQ</h1>
         <hr className='my-3'/>
-        <ul>
+        <ul className=''>
           {questions.map((question) => (
-            <li className='text-sm' key={question.id}>
-              {question.q} <br />
-            </li>
+            <li className='w-60 cursor-pointer flex justify-between items-start text-sm my-3' key={question.id}>
+              {question.q}
+              <Image
+                src={Plus}
+                width={20}
+                alt='plus'
+              />
+            </li> 
           ))}
         </ul>        
       </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Character from '../../../public/Character.png'
 
-function character() {
+function team() {
   return (
     <div className='flex justify-center items-center h-70'>
         <div>
@@ -17,4 +17,4 @@ function character() {
   )
 }
 
-export default character
+export default team
