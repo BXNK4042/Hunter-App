@@ -37,18 +37,18 @@ function nav() {
       {isMenuOpen ? (
         <ul className='flex flex-col gap-4 py-3'>
           <li>
-            <Link href="/page">
+            <Link href="/">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/character">
-              Character
+            <Link href="/characters">
+              Characters
             </Link>
           </li>
           <li>
-            <Link href="/nen">
-              Nen
+            <Link href="/nens">
+              Nens
             </Link>
           </li>
         </ul>      
